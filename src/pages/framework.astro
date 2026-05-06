@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Framework Overview" description="What changed from 2022 to 2026. The three lenses. How the framework compares to OWASP, NIST, and the EU AI Act.">
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-white mb-2">The Three-Lens Framework</h1>
+    <p class="text-muted mb-10">From 36 risks and 15 mitigations (2022) to 87 risks and 44 mitigations (2026). Built on an MIT thesis. Extended with AIRI, OWASP, NIST, EU AI Act.</p>
+
+    <div class="space-y-12 text-sm leading-relaxed">
+      <section>
+        <h2 class="section-title">What Changed (2022 → 2026)</h2>
+        <p class="text-muted mb-4">The original framework identified 36 risks and 15 mitigation techniques from a systematic review of 77 papers. Since May 2022, four shifts have reshaped the risk landscape:</p>
+        <div class="space-y-4 text-muted">
+          <div class="card"><h3 class="text-white font-semibold mb-1">1. LLMs Collapse the RPA/ML Distinction</h3><p>ChatGPT (Nov 2022) and subsequent models handle both deterministic instruction-following and probabilistic reasoning in a single system. The entire RPA+ML architecture is being replaced by a single agent architecture.</p></div>
+          <div class="card"><h3 class="text-white font-semibold mb-1">2. AI Agents Operate Autonomously</h3><p>Agentic systems plan, invoke tools, and execute multi-step action chains with reduced human involvement — a qualitative shift from deterministic automation to autonomous cognitive work.</p></div>
+          <div class="card"><h3 class="text-white font-semibold mb-1">3. Regulation Is Now Binding</h3><p>EU AI Act (Aug 2024), NIST AI RMF 1.0 (Jan 2023) and GenAI Profile (Jul 2024), ISO/IEC 42001:2023. When the thesis was written, AI regulation was aspirational. Today it carries legal obligations with enforcement mechanisms and penalties.</p></div>
+          <div class="card"><h3 class="text-white font-semibold mb-1">4. The Risk Landscape Expanded by Orders of Magnitude</h3><p>The MIT AI Risk Repository catalogs 1,700+ risks from 43 taxonomies with 1,366 real-world incidents. This v3 framework identifies 87 risks across 11 categories.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Why Three Lenses</h2>
+        <p class="text-muted mb-4">The original two-axis framework was correct for its purpose — mapping risks the deploying enterprise controls. But agentic AI introduces risks that operate above the individual firm level. The third lens acknowledges what one firm can't solve alone.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="card border-operational/30"><h3 class="text-operational font-bold mb-1">🔧 Operational</h3><p class="text-muted text-xs">Day-to-day execution. Engineering and security risks the firm directly controls. 36 risks across 4 categories.</p></div>
+          <div class="card border-organizational/30"><h3 class="text-organizational font-bold mb-1">🏛 Organizational</h3><p class="text-muted text-xs">People, process, governance. Risks the firm controls through policy, training, contracts. 32 risks across 4 categories.</p></div>
+          <div class="card border-systemic/30"><h3 class="text-systemic font-bold mb-1">🌐 Systemic</h3><p class="text-muted text-xs">Above-firm, societal-scale. Risks the firm influences but can't unilaterally mitigate. 19 risks across 3 categories. Requires collective action.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">How It Compares</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs text-muted">
+            <thead><tr class="border-b border-divider"><th class="text-left py-2 pr-4 text-white">Dimension</th><th class="py-2 px-3 text-center">Three-Lens</th><th class="py-2 px-3 text-center">OWASP LLM</th><th class="py-2 px-3 text-center">OWASP Agentic</th><th class="py-2 px-3 text-center">NIST AI RMF</th><th class="py-2 px-3 text-center">EU AI Act</th></tr></thead>
+            <tbody>
+              <tr class="border-b border-divider/30"><td class="py-2 pr-4 text-white">Technical agent security</td><td class="py-2 text-center text-action">✓</td><td class="py-2 text-center">✓</td><td class="py-2 text-center">✓</td><td class="py-2 text-center opacity-50">◐</td><td class="py-2 text-center opacity-30">—</td></tr>
+              <tr class="border-b border-divider/30"><td class="py-2 pr-4 text-white">Model safety & alignment</td><td class="py-2 text-center text-action">✓</td><td class="py-2 text-center opacity-50">◐</td><td class="py-2 text-center opacity-50">◐</td><td class="py-2 text-center opacity-50">◐</td><td class="py-2 text-center opacity-50">◐</td></tr>
+              <tr class="border-b border-divider/30"><td class="py-2 pr-4 text-white">Workforce & human impact</td><td class="py-2 text-center text-action">✓</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-50">◐</td><td class="py-2 text-center opacity-50">◐</td></tr>
+              <tr class="border-b border-divider/30"><td class="py-2 pr-4 text-white">Governance & compliance</td><td class="py-2 text-center text-action">✓</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center">✓</td><td class="py-2 text-center">✓</td></tr>
+              <tr class="border-b border-divider/30"><td class="py-2 pr-4 text-white">Supply chain</td><td class="py-2 text-center text-action">✓</td><td class="py-2 text-center opacity-50">◐</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-50">◐</td><td class="py-2 text-center opacity-50">◐</td></tr>
+              <tr class="border-b border-divider/30"><td class="py-2 pr-4 text-white">Systemic & societal risks</td><td class="py-2 text-center text-action">✓</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-50">◐</td><td class="py-2 text-center opacity-50">◐</td></tr>
+              <tr class="border-b border-divider/30"><td class="py-2 pr-4 text-white">Deployment sequencing</td><td class="py-2 text-center text-action">✓</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-30">—</td></tr>
+              <tr><td class="py-2 pr-4 text-white">Cross-axis interactions</td><td class="py-2 text-center text-action">✓</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-30">—</td><td class="py-2 text-center opacity-30">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-muted text-xs mt-4">OWASP covers technical threats. NIST provides governance. The EU AI Act defines obligations. The Three-Lens Framework is the only one designed as a deployment readiness assessment — with a sequenced deployment path, severity tiers, and cross-axis interaction mapping.</p>
+      </section>
+
+      <section>
+        <h2 class="section-title">Looking Forward (2028)</h2>
+        <p class="text-muted mb-4">Five risks most likely to escalate based on deployment trajectories and incident data:</p>
+        <ol class="list-decimal list-inside space-y-2 text-muted text-sm">
+          <li><span class="text-white font-medium">Agent-Enabled Fraud at Scale</span> — 353 incidents and counting. Fraud-as-a-service is emerging.</li>
+          <li><span class="text-white font-medium">Multi-Agent Emergent Behaviour</span> — The gap between individual testing and multi-agent interaction is widening.</li>
+          <li><span class="text-white font-medium">AI Misinformation at Scale</span> — 174 incidents. The cumulative effect on trust is not yet priced into risk models.</li>
+          <li><span class="text-white font-medium">Dangerous Dual-Use Proliferation</span> — 77 entries. The gap between legitimate use and harmful repurposing is shrinking.</li>
+          <li><span class="text-white font-medium">Systemic Labor Market Restructuring</span> — A slow-burning crisis that will reshape workforce strategy.</li>
+        </ol>
+      </section>
+    </div>
+  </section>
+</BaseLayout>

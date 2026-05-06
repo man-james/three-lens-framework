@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MitigationGrid from '../components/MitigationGrid.tsx';
+---
+<BaseLayout title="Mitigations" description="44 risk mitigation techniques across 5 groups. Filter by group. First Five highlighted.">
+  <section class="max-w-7xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-white mb-2">Mitigation Techniques</h1>
+    <p class="text-muted mb-8">44 techniques across 5 groups. The First Five (highlighted in green) cover the majority of mapped Operational and Organizational risk surface.</p>
+    <MitigationGrid client:only="preact" />
+  </section>
+</BaseLayout>

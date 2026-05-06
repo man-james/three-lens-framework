@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RiskTable from '../components/RiskTable.tsx';
+
+const isTriage = Astro.url.searchParams.get('mode') === 'triage';
+---
+<BaseLayout title={isTriage ? '30-Minute Triage' : 'Assessment Tool'} description="Score your AI agent deployment against the Three-Lens Framework. Start with the 30-minute triage or the full 87-risk assessment.">
+  <section class="max-w-7xl mx-auto px-4 py-12">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-white">{isTriage ? '30-Minute Triage' : 'Assessment Tool'}</h1>
+      <p class="text-muted mt-2">
+        {isTriage
+          ? 'Score the 15 Critical risks only. If any score 3 or below, deploy the First Five before anything else. Takes 30 minutes.' 
+          : 'Score your deployment against all 87 risks. Your scores are saved in this browser. Export your action plan when done.'}
+        {isTriage
+          ? <span class="ml-2"><a href="/assess" class="text-action hover:underline">Full assessment →</a></span>
+          : <span class="ml-2"><a href="/assess?mode=triage" class="text-action hover:underline">30-minute triage →</a></span>}
+      </p>
+      {isTriage && (
+        <div class="mt-4 p-4 rounded-lg bg-card border border-emerald-500/30">
+          <p class="text-emerald-400 text-sm font-medium">Critical risks are pre-selected. Score each below. If any score 3 or below, stop and deploy the First Five before adding new agents.</p>
+        </div>
+      )}
+    </div>
+    <RiskTable mode="score" client:only="preact" />
+    <div class="mt-8 text-center text-sm text-muted">
+      <p>Prefer offline? <a href="/downloads/framework-v3-assessment-template.xlsx" class="text-action hover:underline">Download the Excel workbook</a> with all scoring sheets, dropdowns, and tier coloring.</p>
+    </div>
+  </section>
+</BaseLayout>

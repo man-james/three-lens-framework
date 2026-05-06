@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Resources" description="Case studies, references, limitations, and downloads for the Three-Lens Framework.">
+  <section class="max-w-4xl mx-auto px-4 py-12 space-y-16">
+    <div>
+      <h1 class="text-3xl font-bold text-white mb-8">Resources</h1>
+
+      <section class="mb-12">
+        <h2 class="section-title">Case Studies</h2>
+        <p class="text-muted text-sm mb-6">Three fictional but plausible deployment scenarios based on AIRI incident patterns.</p>
+        <div class="space-y-6">
+          <div class="card">
+            <h3 class="text-white font-bold mb-2">Fintech — Shadow Agents and Customer Fraud</h3>
+            <p class="text-muted text-sm leading-relaxed">A mid-size fintech deployed 12 customer service agents. PL4 (inventory) discovered 23 — 11 unauthorized agents across marketing, sales, and engineering. A 4-hour red-team exercise found a vulnerability that would have cost $12,000+ per incident. Six months post-deployment: zero agent-enabled fraud incidents, confabulation rate down 35%, maturity score improved from 3.8 to 2.1.</p>
+          </div>
+          <div class="card">
+            <h3 class="text-white font-bold mb-2">Healthcare — Discriminatory Performance Before Patient Harm</h3>
+            <p class="text-muted text-sm leading-relaxed">A regional healthcare provider's clinical decision support agent showed a 9-point diagnostic accuracy gap between white and Black patients. The bias was caught during assessment using OP-MD2 scoring methodology — not after patient harm. Post-mitigation: gap reduced to 3 points. No adverse outcomes attributed to discriminatory agent behavior.</p>
+          </div>
+          <div class="card">
+            <h3 class="text-white font-bold mb-2">Government — Systemic Risk Disclosure Before Public Launch</h3>
+            <p class="text-muted text-sm leading-relaxed">A national agency published a Systemic Impact Statement 3 months before launching a citizen-facing AI agent serving 2 million people. The disclosure defused pre-launch criticism from civil society organizations and was cited in parliamentary oversight as an example of proactive AI governance. The template was adopted by two other agencies.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="section-title">Limitations</h2>
+        <div class="space-y-3 text-muted text-sm leading-relaxed">
+          <p>The framework is an expert synthesis of 43+ taxonomies — not a systematic review. The 44 mitigation techniques have not been empirically validated. The First Five deployment sequence is based on mapping matrix coverage, not operational evidence.</p>
+          <p>The framework focuses on enterprise AI agent deployments and does not address autonomous weapons, state-level AI competition, or AI welfare. Systemic risks (the SY axis) have partial mitigations — the EX group provides leverage but does not claim complete coverage.</p>
+          <p>Severity tiers are based on AIRI incident data as of 2026. Emerging risks have near-zero current incidents but potentially catastrophic trajectories. Tiers should be revisited as incident data accumulates.</p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="section-title">References</h2>
+        <div class="text-muted text-xs leading-relaxed space-y-1">
+          <p><strong>Man, J. (2022).</strong> <em>Towards the Future of Work: Managing the Risks of AI and Automation.</em> MIT Sloan School of Management.</p>
+          <p><strong>Slattery, P., et al. (2024).</strong> The AI Risk Repository. arXiv:2408.12622.</p>
+          <p><strong>OWASP. (2025).</strong> OWASP Top 10 for LLM Applications.</p>
+          <p><strong>OWASP. (2026).</strong> OWASP Top 10 for Agentic Applications.</p>
+          <p><strong>NIST. (2023).</strong> AI Risk Management Framework 1.0. NIST AI 100-1.</p>
+          <p><strong>NIST. (2024).</strong> GenAI Profile. NIST AI 600-1.</p>
+          <p><strong>European Union. (2024).</strong> AI Act. Regulation 2024/1689.</p>
+          <p><strong>ISO/IEC. (2023).</strong> ISO/IEC 42001:2023.</p>
+          <p class="mt-4">Full reference list (27+ academic publications) available in the <a href="/downloads" class="text-operational hover:underline">framework document</a>.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">About</h2>
+        <p class="text-muted text-sm leading-relaxed">The Three-Lens Framework extends James Man's 2022 MIT thesis with the MIT AI Risk Repository (1,366 incidents, 1,700+ risks), OWASP Agentic Top 10 (2026), NIST AI RMF 1.0 & GenAI Profile (2023/2024), EU AI Act (2024), ISO/IEC 42001:2023, and 27+ academic publications on agentic AI governance (2023-2026).</p>
+      </section>
+    </div>
+  </section>
+</BaseLayout>
